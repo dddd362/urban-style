@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Style - Clothing Store</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<header class="site-header">
+
+    <a href="#home" class="logo">
+        URBAN <span>STYLE</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Үндсэн цэс">
+        <a href="#home">Нүүр</a>
+        <a href="#products">Бүтээгдэхүүн</a>
+        <a href="#cart">Сагс</a>
+        <a href="#contact">Холбоо барих</a>
+    </nav>
+
+</header>
+
+  
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="hero-label">NEW COLLECTION 2026</p>
+
+        <h1>ӨӨРИЙН ХЭВ МАЯГИЙГ БҮТЭЭ</h1>
+
+        <p class="hero-description">
+            Орчин үеийн streetwear загваруудыг
+            нэг дороос.
+        </p>
+
+        <a href="#products" class="shop-button">
+            Бүтээгдэхүүн үзэх →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<section class="products" id="products">
+
+    <h2>Манай бүтээгдэхүүнүүд</h2>
+    
+<!-- Бүтээгдэхүүн хайх хэсэг -->
+<div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Хүссэн хувцасаа хайгаарай..."
+        aria-label="Бүтээгдэхүүн хайх"
+    >
+</div>
+
+<!-- Ангиллын товчлуурууд -->
+<div class="category-filter">
+
+    <button class="category-btn active" data-filter="all">
+        Бүгд
+    </button>
+
+    <button class="category-btn" data-filter="tshirt">
+        Футболк
+    </button>
+
+    <button class="category-btn" data-filter="pants">
+        Өмд
+    </button>
+
+    <button class="category-btn" data-filter="outer">
+        Гадуур хувцас
+    </button>
+
+</div>
+
+<p id="noResults" hidden>
+    Бүтээгдэхүүн олдсонгүй.
+</p>
+
+    <div class="product-grid">
+
+        <!-- Бүтээгдэхүүн 1 -->
+        <div class="product-card" data-category="tshirt">
+            <img src="images/zurg1.jpg" alt="Футболк">
+            <h3>Oversized T-Shirt</h3>
+            <p>Өдөр тутмын футболк</p>
+            <h4>49,900₮</h4>
+
+            <button class="details-btn">Дэлгэрэнгүй</button>
+            
+<button class="add-cart-btn"
+        data-name="Oversized T-Shirt"
+        data-price="49900">
+    🛒 Сагсанд нэмэх
+</button>
+
+            <div class="product-info" hidden>
+                <p>Өнгө: Цагаан</p>
+                <p>Хэмжээ: S, M, L, XL</p>
+                <p>Материал: Хөвөн даавуу</p>
+                <p>Хүргэлт: Улаанбаатар хот дотор</p>
+            </div>
+        </div>
+
+        <!-- Бүтээгдэхүүн 2 -->
+        <div class="product-card" data-category="pants">
+            <img src="images/jeans.jpg" alt="Жинс">
+            <h3>Baggy Jeans</h3>
+            <p>Чөлөөт загварын жинс</p>
+            <h4>89,900₮</h4>
+
+            <button class="details-btn">Дэлгэрэнгүй</button>
+            
+<button class="add-cart-btn"
+        data-name="Baggy Jeans"
+        data-price="89900">
+    🛒 Сагсанд нэмэх
+</button>
+
+            <div class="product-info" hidden>
+                <p>Өнгө: Цэнхэр</p>
+                <p>Хэмжээ: 28, 30, 32, 34</p>
+                <p>Материал: Denim</p>
+                <p>Загвар: Wide Fit</p>
+            </div>
+        </div>
+
+        <!-- Бүтээгдэхүүн 3 -->
+        <div class="product-card" data-category="outer">
+            <img src="images/hoodie.jpg" alt="Худи">
+            <h3>Oversized Hoodie</h3>
+            <p>Дулаахан, загварлаг</p>
+            <h4>79,900₮</h4>
+
+            <button class="details-btn">Дэлгэрэнгүй</button>
+            
+<button class="add-cart-btn"
+        data-name="Oversized Hoodie"
+        data-price="79900">
+    🛒 Сагсанд нэмэх
+</button>
+
+            <div class="product-info" hidden>
+                <p>Өнгө: Саарал, Хар</p>
+                <p>Хэмжээ: M, L, XL</p>
+                <p>Материал: Cotton / Polyester</p>
+            </div>
+        </div>
+
+        <!-- Бүтээгдэхүүн 4 -->
+        <div class="product-card" data-category="outer">
+            <img src="images/jacket.jpg" alt="Куртик">
+            <h3>Street Jacket</h3>
+            <p>Орчин үеийн загвартай куртик</p>
+            <h4>129,900₮</h4>
+            
+            <button class="details-btn">Дэлгэрэнгүй</button>
+
+<button class="add-cart-btn"
+        data-name="Street Jacket"
+        data-price="129900">
+    🛒 Сагсанд нэмэх
+</button>
+
+            <div class="product-info" hidden>
+                <p>Өнгө: Хар, Бор</p>
+                <p>Хэмжээ: M, L, XL</p>
+                <p>Материал: Polyester</p>
+            </div>
+        </div>
+
+    </div>
+
+<!-- Миний сагс -->
+<section class="cart-summary">
+
+    <h2>🛒 Миний сагс</h2>
+
+    <!-- Сагсны бүтээгдэхүүнүүд энд гарна -->
+    <div id="cartItems"></div>
+
+    <p>
+        Нийт бүтээгдэхүүн:
+        <span id="cartCount">0</span>
+    </p>
+
+    <h3>
+        Нийт үнэ:
+        <span id="cartTotal">0₮</span>
+    </h3>
+
+</section>
+
+<!-- Захиалгын хэсэг -->
+<section class="checkout">
+
+    <h2>Захиалга баталгаажуулах</h2>
+
+    <form id="checkoutForm">
+
+        <label for="customerName">Таны нэр</label>
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Нэрээ оруулна уу"
+            required
+        >
+
+        <label for="customerPhone">Утасны дугаар</label>
+        <input
+            type="tel"
+            id="customerPhone"
+            placeholder="8 оронтой утасны дугаар"
+            pattern="[0-9]{8}"
+            maxlength="8"
+            required
+        >
+
+        <label for="customerAddress">Хүргэлтийн хаяг</label>
+        <textarea
+            id="customerAddress"
+            placeholder="Дүүрэг, хороо, байр..."
+            rows="3"
+            required
+        ></textarea>
+
+        <button type="submit">
+            Захиалгаа шалгах
+        </button>
+
+    </form>
+
+    <div id="orderResult" hidden></div>
+
+</section>
+
+
+</section>
+
+<footer class="site-footer" id="contact">
+
+    <h2>URBAN STYLE</h2>
+
+    <p>Өөрийн хэв маягийг бидэнтэй хамт бүтээ.</p>
+
+    <div class="footer-links">
+        <a href="#home">Нүүр</a>
+        <a href="#products">Бүтээгдэхүүн</a>
+        <a href="#cart">Сагс</a>
+    </div>
+
+    <p>Холбоо барих: 0000-0000</p>
+
+    <p>© 2026 URBAN STYLE. All rights reserved.</p>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

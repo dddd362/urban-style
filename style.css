@@ -1,0 +1,586 @@
+
+body {
+    margin: 0;
+    background-color: #111827;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Сайтын дээд хэсэг */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #1f2937;
+}
+
+/* Дэлгүүрийн нэр */
+header h1 {
+    color: #fbbf24;
+    font-size: 28px;
+}
+
+/* Цэсний холбоосууд */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+/* Хулганаар очих үед */
+nav a:hover {
+    color: #fbbf24;
+}
+
+/* Гол хэсэг */
+main {
+    padding: 100px 20px;
+}
+
+main h2 {
+    font-size: 40px;
+}
+
+main p {
+    font-size: 18px;
+    color: #d1d5db;
+}
+
+/* Товчлуур */
+button {
+    background-color: #fbbf24;
+    color: #111827;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Хулганаар очих үед */
+button:hover {
+    background-color: #f59e0b;
+}
+
+/* Бүтээгдэхүүний хэсэг */
+.products {
+    padding: 50px 20px;
+}
+
+/* Бүтээгдэхүүний карт */
+.product-card {
+    background-color: #1f2937;
+    width: 280px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+}
+
+/* Бүтээгдэхүүний зураг */
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Бүтээгдэхүүний нэр */
+.product-card h3 {
+    font-size: 22px;
+    color: white;
+}
+
+/* Бүтээгдэхүүний тайлбар */
+.product-card p {
+    color: #d1d5db;
+}
+
+/* Бүтээгдэхүүний үнэ */
+.product-card h4 {
+    font-size: 20px;
+    color: #fbbf24;
+}
+
+/* Бүтээгдэхүүнүүдийг зэрэгцүүлэх */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Картын хэмжээг Grid-д тохируулах */
+.product-card {
+    width: auto;
+    min-width: 0;
+    margin: 0;
+}
+
+/* Таблетын дэлгэц */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Гар утасны дэлгэц */
+@media (max-width: 500px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 0 6px;
+    }
+
+    main h2 {
+        font-size: 28px;
+    }
+}
+
+.shop-button {
+    display: inline-block;
+    background-color: #fbbf24;
+    color: #111827;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.shop-button:hover {
+    background-color: #f59e0b;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Картын хөдөлгөөн */
+.product-card {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+/* Хулганаар очих үед */
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Зургийн хөдөлгөөн */
+.product-card img {
+    transition: transform 0.3s ease;
+}
+
+/* Хулганаар карт дээр очиход зураг томорно */
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Нэмэлт мэдээллийн хэсэг */
+.product-info {
+    background-color: #374151;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* Мэдээллийн гарчиг */
+.product-info h3 {
+    color: #fbbf24;
+    font-size: 18px;
+}
+
+/* Мэдээллийн текст */
+.product-info p {
+    color: white;
+    font-size: 14px;
+}
+
+/* hidden үед харагдуулахгүй */
+.product-info[hidden] {
+    display: none;
+}
+
+/* Хайлтын хэсэг */
+.search-box {
+    max-width: 450px;
+    margin: 30px auto;
+}
+
+/* Хайлтын талбар */
+.search-box input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 2px solid #374151;
+    border-radius: 10px;
+    background-color: #1f2937;
+    color: white;
+    outline: none;
+}
+
+/* Хайх талбар дээр дарахад */
+.search-box input:focus {
+    border-color: #5317ec;
+}
+
+/* Бүтээгдэхүүн олдохгүй үед */
+#noResults {
+    color: #fbbf24;
+    font-size: 18px;
+    margin: 25px 0;
+}
+
+#noResults[hidden] {
+    display: none;
+}
+
+/* Хайлтаар нуугдсан карт */
+.product-card[hidden] {
+    display: none;
+}
+
+/* Ангиллын товчлуурууд */
+.category-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0 35px;
+}
+
+/* Энгийн товч */
+.category-btn {
+    background-color: #374151;
+    color: white;
+    border: 1px solid #4b5563;
+    border-radius: 25px;
+    padding: 12px 20px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Хулганаар очих үед */
+.category-btn:hover {
+    background-color: #4b5563;
+}
+
+/* Сонгогдсон товч */
+.category-btn.active {
+    background-color: #fbbf24;
+    color: #111827;
+    border-color: #fbbf24;
+}
+
+/* Сагсны хэсэг */
+.cart-summary {
+    background-color: #1f2937;
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 12px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.cart-summary h3 {
+    color: #fbbf24;
+}
+
+/* Сагсанд нэмэх товч */
+.add-cart-btn {
+    background-color: #16a34a;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.add-cart-btn:hover {
+    background-color: #15803d;
+}
+
+/* Сагсны бүтээгдэхүүн */
+.cart-item {
+    background-color: #374151;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.cart-item strong {
+    color: white;
+    font-size: 16px;
+}
+
+.cart-item p {
+    color: #fbbf24;
+    font-weight: bold;
+}
+
+/* Нэмэх, хасах товчлуурууд */
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cart-controls button {
+    background-color: #4b5563;
+    color: white;
+    padding: 8px 12px;
+    margin: 0;
+    font-size: 14px;
+}
+
+.cart-controls button:hover {
+    background-color: #6b7280;
+}
+
+.cart-controls span {
+    color: white;
+    font-weight: bold;
+}
+
+/* Захиалгын хэсэг */
+.checkout {
+    background-color: #1f2937;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.checkout h2 {
+    color: #fbbf24;
+    text-align: center;
+}
+
+/* Form-ийн талбарууд */
+.checkout label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.checkout input,
+.checkout textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #4b5563;
+    border-radius: 8px;
+    background-color: #374151;
+    color: white;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.checkout input:focus,
+.checkout textarea:focus {
+    outline: 2px solid #fbbf24;
+}
+
+/* Захиалга шалгах товч */
+.checkout button {
+    width: 100%;
+    margin-top: 25px;
+}
+
+/* Захиалгын үр дүн */
+#orderResult {
+    background-color: #374151;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+#orderResult[hidden] {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .checkout {
+        margin: 20px 12px;
+        padding: 20px;
+    }
+}
+
+/* Бүх элементийн хэмжээг зөв тооцох */
+* {
+    box-sizing: border-box;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 5%;
+    background-color: #111827;
+    border-bottom: 1px solid #374151;
+}
+
+/* Лого */
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #fbbf24;
+}
+
+/* Цэс */
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0;
+}
+
+.main-nav a:hover {
+    color: #fbbf24;
+}
+
+/* Hero хэсэг */
+.hero {
+    min-height: 550px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 750px;
+    text-align: center;
+}
+
+.hero-label {
+    color: #fbbf24;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    color: white;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero-description {
+    color: #e5e7eb;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #0b1120;
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 1px solid #374151;
+}
+
+.site-footer h2 {
+    color: #fbbf24;
+}
+
+.site-footer p {
+    color: #9ca3af;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #fbbf24;
+}
+
+@media (max-width: 600px) {
+
+    .site-header {
+        flex-direction: column;
+        padding: 20px 12px;
+    }
+
+    .main-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .main-nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 420px;
+        padding: 50px 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+}
